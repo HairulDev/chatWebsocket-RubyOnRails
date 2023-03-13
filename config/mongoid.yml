@@ -10,7 +10,7 @@ development:
       # This defines the name of the default database that Mongoid can connect to.
       # (required).
 
-     uri: mongodb+srv://hairul:lHVFJ73JzF5wsq0h@cluster0.2tx2g.mongodb.net/db-travel?authSource=admin&replicaSet=atlas-k9dkts-shard-0&w=majority&readPreference=primary&retryWrites=true&ssl=true
+     uri: mongodb://hairul:lHVFJ73JzF5wsq0h@cluster0.2tx2g.mongodb.net/chat-development?authSource=admin&replicaSet=atlas-k9dkts-shard-0&w=majority&readPreference=primary&retryWrites=true&ssl=true
       # uri: mongodb://localhost:27017/chat_development
       # database: chat_development
       
@@ -25,8 +25,8 @@ development:
 production:
   clients:
     default:
-      uri: mongodb+srv://hairul:lHVFJ73JzF5wsq0h@cluster0.2tx2g.mongodb.net/db-travel?authSource=admin&replicaSet=atlas-k9dkts-shard-0&w=majority&readPreference=primary&retryWrites=true&ssl=true
-      # uri: <%= ENV['MONGODB_URI'] %>
+      # uri: mongodb+srv://hairul:lHVFJ73JzF5wsq0h@cluster0.2tx2g.mongodb.net/chat-development?authSource=admin&replicaSet=atlas-k9dkts-shard-0&w=majority&readPreference=primary&retryWrites=true&ssl=true
+      uri: <%= ENV['MONGODB_URI'] %>
       options:
         ssl: true
 
