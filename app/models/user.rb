@@ -1,3 +1,5 @@
+require "mongoid"
+
 class User < ApplicationRecord
     include Mongoid::Document
     field :name, type: String
