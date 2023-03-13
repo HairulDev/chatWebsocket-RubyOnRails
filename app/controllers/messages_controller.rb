@@ -3,10 +3,6 @@ class MessagesController < ApplicationController
 
   # GET /messages
   def index
-# versi sqlite3
-    # @messages = Message.all.map do |message|
-    #   message.attributes.merge(user: User.find_by(id: message.user_created))
-    # end
     @messages = Message.all
     # @messages = Message.all.map do |message|
     #   message.attributes.merge(user: User.find_by(_id: message.user_created))
@@ -30,7 +26,7 @@ class MessagesController < ApplicationController
     render json: @message
   end
 
-  # PATCH/PUT /messages/1
+  # PATCH/PUT/messages/1
   def update
     if @message.update(message_params)
       render json: @message, status: :created, location: @message
