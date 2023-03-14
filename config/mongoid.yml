@@ -10,15 +10,14 @@ development:
       # This defines the name of the default database that Mongoid can connect to.
       # (required).
 
-     uri: mongodb://hairul:lHVFJ73JzF5wsq0h@cluster0.2tx2g.mongodb.net/chat-development?authSource=admin&replicaSet=atlas-k9dkts-shard-0&w=majority&readPreference=primary&retryWrites=true&ssl=true
+    #  uri: mongodb://hairul:lHVFJ73JzF5wsq0h@cluster0.2tx2g.mongodb.net/chat-development?authSource=admin&replicaSet=atlas-k9dkts-shard-0&w=majority&readPreference=primary&retryWrites=true&ssl=true
       # uri: mongodb://localhost:27017/chat_development
-      # database: chat_development
-      
+      database: chat_development
+      hosts:
+        - localhost:27017
       # Provides the hosts the default client can connect to. Must be an array
       # of host:port pairs. (required)
 
-      # hosts:
-      #   - localhost:27017
       options:
 
 
@@ -26,7 +25,10 @@ production:
   clients:
     default:
       # uri: mongodb+srv://hairul:lHVFJ73JzF5wsq0h@cluster0.2tx2g.mongodb.net/chat-development?authSource=admin&replicaSet=atlas-k9dkts-shard-0&w=majority&readPreference=primary&retryWrites=true&ssl=true
-      uri: <%= ENV['MONGODB_URI'] %>
+      # uri: <%= ENV['MONGODB_URI'] %>
+        database: chat_development
+      hosts:
+        - localhost:27017
       options:
         ssl: true
 
@@ -191,7 +193,7 @@ production:
 test:
   clients:
     default:
-      database: chat_test
+      database: chat_development
       hosts:
         - localhost:27017
       options:
