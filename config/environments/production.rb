@@ -36,6 +36,7 @@ Rails.application.configure do
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
   # config.action_cable.url = "wss://example.com/cable"
+  config.action_cable.url = "ws://ec2-175-41-187-69.ap-southeast-1.compute.amazonaws.com:3001"
   config.action_cable.allowed_request_origins = ['http://ec2-175-41-187-69.ap-southeast-1.compute.amazonaws.com:3000']
   # config.action_cable.allowed_request_origins = [ "http://example.com", /http:\/\/example.*/ ]
 
